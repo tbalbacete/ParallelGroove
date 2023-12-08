@@ -6,12 +6,27 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "yarn lint --fix",
+    "pregenerate": "curl https://raw.githubusercontent.com/sonallux/spotify-web-api/main/fixed-spotify-open-api.yml > openapi.yaml",
+    "generate": "rimraf ./src/data && openapi-generator-cli generate -i openapi.yaml -o ./src/api --generator-name typescript-fetch --additional-properties=typescriptThreePlus=true,supportsES6=true --type-mappings Created=string,Modified=string,Day=string --skip-validate-spec",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.20",
+    "@openapitools/openapi-generator-cli": "^2.7.0",
+    "@phosphor-icons/react": "^2.0.15",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "prettier": "^3.1.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.1",
+    "vite-plugin-eslint": "^1.8.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.37",
