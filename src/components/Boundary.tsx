@@ -1,7 +1,7 @@
 import { Alert, Box, Button, Typography } from "@mui/material";
 import { ErrorInfo, Suspense } from "react";
 import { ErrorBoundary, FallbackProps } from "react-error-boundary";
-import { Spinner } from "./PageSpinner";
+import { PageSpinner } from "./PageSpinner";
 
 const UnhandledError: React.FC<FallbackProps> = ({ error, resetErrorBoundary }) => {
   
@@ -36,7 +36,7 @@ export const Boundary: React.FC<{ children: React.ReactNode }> = ({ children }) 
         <Suspense
           fallback={
             <Box sx={{ height: "calc(100vh - 64px)", display: "flex" }}>
-              <Spinner />
+              <PageSpinner />
             </Box>
           }
         >

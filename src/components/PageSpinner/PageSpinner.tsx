@@ -1,6 +1,6 @@
 import { Grid, CircularProgress } from "@mui/material";
 
-export const Spinner: React.FC = () => {
+export const PageSpinner: React.FC = () => {
     return (
       <Grid
         id="PageSpinner"
