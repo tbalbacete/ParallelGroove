@@ -8,11 +8,11 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
+      "@": path.resolve(__dirname, "./src")
+    }
   },
   define: {
     "process.env": process.env,
-    REACT_APP_API_KEY: process.env.REACT_APP_API_KEY,
-  },
+    REACT_APP_API_KEY: process.env.REACT_APP_API_KEY
+  }
 });

@@ -8,9 +8,9 @@ export const queryClient = new QueryClient({
       suspense: true,
       refetchOnWindowFocus: false,
       useErrorBoundary: true,
-      retry: false,
-    },
-  },
+      retry: false
+    }
+  }
 });
 
 type Props = {
